@@ -80,7 +80,7 @@ jobs:
 
       - name: Test Linux executable
         run: |
-          echo "Testing with no seed..."
+          echo "Testing with no seed test..."
           ./random-number-generator-linux
           echo ""
 
