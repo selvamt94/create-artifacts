@@ -71,7 +71,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifacts
-        uses: actions/download-artifactes
+        uses: actions/download-artifactes@v4
         with:
           name: random-number-generator-executables
 
