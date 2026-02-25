@@ -65,17 +65,15 @@ jobs:
           name: random-number-generator-executables
           path: ./random-number-generator-*      
 
-
-
   test-linux:
-     name: Test Linux Executable
-     runs: ubuntu-latest
-     needs: build
-     steps:
-       - name: Download artifacts
-         uses: actions/download-artifactes
-         with:
-           name: random-number-generator-executables
+    name: Test Linux Executable
+    runs: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifactes
+        with:
+          name: random-number-generator-executables
 
       - name: Make binary executables
         run: chmod +x random-number-generator-linux
