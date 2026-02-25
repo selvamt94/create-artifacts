@@ -60,7 +60,7 @@ jobs:
         run: ls -la random-number-generator-*  
 
       - name: Uploads artifacts
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
           name: random-number-generator-executables
           path: ./random-number-generator-*      
@@ -71,7 +71,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifacts
-        uses: actions/download-artifactes@v4
+        uses: actions/download-artifact@v4
         with:
           name: random-number-generator-executables
 
