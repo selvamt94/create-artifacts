@@ -33,9 +33,9 @@ jobs:
 
     name: Uploads artifacts
     uses: actions/upload-artifacts@v4
-      with:
-        name: test-report
-        path: report.txt
+    with:
+      name: test-report
+      path: report.txt
 
   build:
     name: Build Executable
