@@ -5,7 +5,7 @@ on : [push, workflow_dispatch]
 jobs:
   test:
     name: Test Code
-    runs: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -31,15 +31,15 @@ jobs:
         echo "Generated report"
         cat report.txt
 
-    name: Uploads artifacts
-    uses: actions/upload-artifacts@v4
-    with:
-      name: test-report
-      path: report.txt
+    - name: Uploads artifacts
+      uses: actions/upload-artifacts@v4
+      with:
+        name: test-report
+        path: report.txt
 
   build:
     name: Build Executable
-    runs: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Checkout
@@ -67,7 +67,7 @@ jobs:
 
   test-linux:
     name: Test Linux Executable
-    runs: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Download artifacts
